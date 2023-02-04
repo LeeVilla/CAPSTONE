@@ -1,1 +1,0 @@
-`API = https://pro-api.coingecko.com/api/v3/`
