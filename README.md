@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+This code is a React component that displays detailed information about a cryptocurrency. The component displays the name, symbol, an image of the cryptocurrency, a graph representation of the price change of the cryptocurrency, and various market data such as the market cap rank, 24 hour high, 24 hour low, circulating supply, current price, and 1-year price change.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Imports
+The following modules are imported at the beginning of the code:
+React from the react package: The main React library is imported to create the React component.
+useParams from the react-router-dom package: The useParams hook is used to extract parameters from the URL.
+showStore from the ../stores/showStore module: This module exports a factory function that creates a store instance with state and behavior specific to this component.
+The following components from the recharts package:
+AreaChart: A reusable chart component that displays a data set as areas.
+Area: A chart component that displays a single data series as an area.
+XAxis: A chart component that displays a horizontal axis.
+YAxis: A chart component that displays a vertical axis.
+CartesianGrid: A chart component that displays a grid behind the chart.
+Tooltip: A chart component that displays a tooltip when the user hovers over a data point.
+ResponsiveContainer: A chart component that ensures that the chart adjusts its size to fit the parent container.
+Header from the ../components/Header module: This module exports a component that provides a header for the page.
+Show component
+The Show component is the default export of the module. It consists of a functional component that returns a representation of the page in the form of a React element.
+State
+The component uses a store instance created by the showStore factory function to manage its state. The store has the following state:
+data: an object that represents the cryptocurrency data.
+graphData: an array of objects that represents the price changes of the cryptocurrency over time.
+Behavior
+The component performs the following actions:
+On initial render, it calls store.fetchData with the id parameter from the URL. This fetches the cryptocurrency data and updates the store's state.
+On unmount, it calls store.reset to reset the store's state.
+Render
 
-## Available Scripts
+Register FORM DOCS
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This code implements a form for registering a user on a website. It is built using React, a popular JavaScript library for building user interfaces. The code uses several React hooks such as useRef, useState, and useEffect to manage the state and behavior of the form.
+The form has three fields: username, password, and password confirmation. The validity of the username and password is determined by checking against regular expressions (USER_REGEX and PWD_REGEX). The code uses the useEffect hook to update the validName and validPwd state variables based on the values of the username and password fields.
+When the form is submitted, the handleSubmit function is called. It first checks if the values of the username and password match the regular expressions. If they don't, an error message is displayed. If they do match, the function logs the username and password values to the console and sets the success state variable to true.
+The form also has several error messages and visual cues (such as check marks and cross marks) to indicate the validity of the fields to the user. The code uses the aria-invalid and aria-describedby attributes to make the form more accessible for screen readers.
